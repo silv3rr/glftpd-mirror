@@ -2,4 +2,4 @@
 
 Goto https://io.glftpd.ga
 
-Mirror https://glftpd.io
+Mirror of https://glftpd.io
