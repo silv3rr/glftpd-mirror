@@ -1,5 +1,3 @@
-# io.glftpd.ga
+# Mirror of https://glftpd.io
 
 Goto https://io.glftpd.ga
-
-Mirror of https://glftpd.io
