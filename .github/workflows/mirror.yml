@@ -24,8 +24,8 @@ jobs:
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git fetch upstream
       - name: Checkout and merge
-        if: steps.fetch.outcome == 'success'
         id: checkout
+        if: steps.fetch.outcome == 'success'
         run: |
           git checkout main && \
           git merge --allow-unrelated-histories --autostash upstream/main
