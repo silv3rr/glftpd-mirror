@@ -18,7 +18,7 @@ jobs:
         run: |
           git config --global user.name "${{ env.GIT_USER_NAME }}" && \
           git config --global user.email "${{ env.GIT_USER_EMAIL }}" && \
-          printf '/*\n!*ARM_MIPS*' | git sparse-checkout set --stdin && \
+          printf '/*\n!/.gitignore\n!*ARM_MIPS*\n' | git sparse-checkout set --stdin && \
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git fetch upstream && \
           git checkout main && \
