@@ -13,8 +13,8 @@ jobs:
       - name: Fetch from GitLab, skip ARM_MIPS
         run: |
           printf '/*\n!*ARM_MIPS*' | git sparse-checkout set --stdin && \
-          git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga && \
+          git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git fetch upstream && \
           git checkout main && \
-          git merge upstream/main && \
+          git merge --allow-unrelated-histories upstream/main && \
           git push origin main
