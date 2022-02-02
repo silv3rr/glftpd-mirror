@@ -1,4 +1,4 @@
-name: Sparse checkout repo
+name: Mirror repo using sparse checkout
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Pull from GitLab, ignore ARM_MIPS
+      - name: Fetch from GitLab, skip ARM_MIPS
         run: |
           printf '/*\n!*ARM_MIPS*' | git sparse-checkout set --stdin && \
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga && \
