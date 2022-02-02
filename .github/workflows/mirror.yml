@@ -20,7 +20,8 @@ jobs:
           git config --global user.name "${{ env.GIT_USER_NAME }}" && \
           git config --global user.email "${{ env.GIT_USER_EMAIL }}" && \
           git config --global merge.ours.driver true && \
-          git config http.postBuffer 524288000 && \
+          git config --global http.version HTTP/1.1 && \
+          git config --global http.postBuffer 524288000 && \
           printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
       - name: Fetch GitLab repo
         id: fetch
