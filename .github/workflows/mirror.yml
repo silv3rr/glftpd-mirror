@@ -1,8 +1,8 @@
 name: Mirror repo using sparse checkout
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   workflow_dispatch:
 
 jobs:
