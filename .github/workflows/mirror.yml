@@ -22,5 +22,5 @@ jobs:
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git fetch upstream && \
           git checkout main && \
-          git merge --allow-unrelated-histories upstream/main && \
+          git merge --allow-unrelated-histories --autostash upstream/main && \
           git push origin main
