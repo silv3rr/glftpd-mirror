@@ -1,0 +1,26 @@
+name: Sparse mirror
+on:
+  #push:
+  #  branches:
+  #    - main
+  workflow_dispatch:
+
+env:
+  GIT_USER_NAME: github-actions[bot]
+  GIT_USER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+
+jobs:
+  fetch_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get repo from GitLab (skip ARM_MIPS)
+        run: |
+          git config --global user.name "${{ env.GIT_USER_NAME }}" && \
+          git config --global user.email "${{ env.GIT_USER_EMAIL }}" && \
+          printf '/*\n!/.gitignore\n!*ARM_MIPS*\n' | git sparse-checkout set --stdin && \
+          git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
+          git fetch upstream && \
+          git checkout main && \
+          git merge --allow-unrelated-histories --autostash upstream/main && \
+          git push origin main
