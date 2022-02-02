@@ -14,13 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Fetch repo from GitLab (skip ARM_MIPS)
-        id: fetch
-        run: |
+      - name: Configure Git
+        id: config
           git config --global user.name "${{ env.GIT_USER_NAME }}" && \
           git config --global user.email "${{ env.GIT_USER_EMAIL }}" && \
           git config --global merge.ours.driver true && \
-          printf '/*\n!/.gitignore\n!*ARM_MIPS*\n' | git sparse-checkout set --stdin && \
+          git config http.postBuffer 524288000 && \
+          printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
+      - name: Fetch repo from GitLab (skip ARM_MIPS)
+        id: fetch
+        if: steps.config.outcome == 'success'
+        run: |
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git fetch upstream
       - name: Checkout and merge
@@ -28,7 +32,8 @@ jobs:
         if: steps.fetch.outcome == 'success'
         run: |
           git checkout main && \
-          git merge --allow-unrelated-histories --autostash upstream/main
+          git merge --allow-unrelated-histories --autostash upstream/main && \
+          git sparse-checkout reapply
       - name: Push
         if: steps.checkout.outcome == 'success'
         run: git push origin main
