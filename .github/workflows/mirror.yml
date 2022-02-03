@@ -27,7 +27,7 @@ jobs:
           printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
 
           echo "--START-- Sparse info:"
-          cat ./info/sparse-checkout
+          cat .git/info/sparse-checkout
           git sparse-checkout list
           echo "--END--"
 
