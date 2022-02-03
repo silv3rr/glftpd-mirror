@@ -13,16 +13,24 @@ jobs:
   get_repo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Configure Git
         id: config
         run: |
           git config --global user.name "${{ env.GIT_USER_NAME }}" && \
           git config --global user.email "${{ env.GIT_USER_EMAIL }}" && \
+          git config --global core.sparseCheckout true && \
           git config --global merge.ours.driver true && \
-          git config --global http.version HTTP/1.1 && \
-          git config --global http.postBuffer 524288000 && \
-          printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
+          #git config --global http.version HTTP/1.1 && \
+          #git config --global http.postBuffer 524288000 && \
+          git sparse-checkout init && \
+          printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin && \
+                    
+          echo "--START-- Sparse info:"
+          cat ./info/sparse-checkout
+          git sparse-checkout list
+          echo "--END--"
+
+      - uses: actions/checkout@v2
       - name: Fetch GitLab repo
         id: fetch
         if: steps.config.outcome == 'success'
