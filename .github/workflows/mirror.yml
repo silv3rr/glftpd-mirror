@@ -32,12 +32,18 @@ jobs:
           git sparse-checkout list
           echo "--END--"
 
-      - name: Fetch GitLab repo
-        id: fetch
+      - name: Pull GitLab repo
         if: steps.config.outcome == 'success'
         run: |
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
-          git pull --allow-unrelated-histories --autostash upstream main
+          git pull --allow-unrelated-histories --autostash upstream main && \
+          git push origin main
+           
+      #- name: Fetch GitLab repo
+      #  id: fetch
+      #  if: steps.config.outcome == 'success'
+      #  run: |
+      #    git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
       #    git fetch upstream
       #- name: Checkout and merge
       #  id: checkout
@@ -46,6 +52,6 @@ jobs:
       #    git checkout main && \
       #    git merge --allow-unrelated-histories --autostash upstream/main -m "merge upstream" && \
       #    git sparse-checkout reapply
-      - name: Push
-        if: steps.checkout.outcome == 'success'
-        run: git push origin main
+      #- name: Push
+      #  if: steps.checkout.outcome == 'success'
+      #  run: git push origin main
