@@ -37,7 +37,7 @@ jobs:
         if: steps.config.outcome == 'success'
         run: |
           git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
-          git pull --allow-unrelated-histories --autostash upstream/main upstream main
+          git pull --allow-unrelated-histories --autostash upstream main
       #    git fetch upstream
       #- name: Checkout and merge
       #  id: checkout
