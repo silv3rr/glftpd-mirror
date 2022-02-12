@@ -25,7 +25,8 @@ jobs:
           #git config --global http.version HTTP/1.1 && \
           #git config --global http.postBuffer 524288000 && \
           git sparse-checkout init && \
-          printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
+          #printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
+          echo beta/ >> .git/info/sparse-checkout
 
           echo "--START-- Sparse info:"
           cat .git/info/sparse-checkout
@@ -35,7 +36,7 @@ jobs:
       - name: Pull GitLab repo
         if: steps.config.outcome == 'success'
         run: |
-          git remote add upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
+          git remote add -f upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
           git pull --allow-unrelated-histories --autostash upstream main && \
           git push origin main
            
