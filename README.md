@@ -2,4 +2,4 @@
 
 Goto https://io.glftpd.ga
 
-Files: https://bitbucket.org/silv3rr/silv3rr.bitbucket.io/
+Files: https://bitbucket.org/silv3rr/io.glftpd.ga
