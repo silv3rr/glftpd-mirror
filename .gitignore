@@ -1,2 +1,4 @@
-files/*ARM_MIPS*
+#files/*ARM_MIPS*
+#files/*ARM_MIPS*
+files/
 index.html
