@@ -1,3 +1,5 @@
+# TODO: sync only html
+
 name: Sparse mirror
 on:
   #push:
@@ -22,25 +24,22 @@ jobs:
           git config --global pull.rebase false  # merge && \
           git config --global merge.ours.driver true && \
 
-          #git config --global http.version HTTP/1.1 && \
-          #git config --global http.postBuffer 524288000 && \
+          git config --global core.sparseCheckout true && \
+          git sparse-checkout init && \
+          printf '/*\n!/.gitignore\n!/files/*\n' | git sparse-checkout set --stdin
 
-          # sparse checkout doesnt work with lfs
-          #git config --global core.sparseCheckout true && \
-          #git sparse-checkout init && \
-          #printf '/*\n!/.gitignore\n!/files/*ARM_MIPS*\n' | git sparse-checkout set --stdin
-
-          git config --global lfs.fetchexclude "files/*ARM_MIPS*"
+          #git config --global lfs.fetchexclude "files/*ARM_MIPS*"
           printf "index.html\nfiles/*ARM_MIPS*\n" > .gitignore
           printf "index.html\nfiles/*ARM_MIPS*\n" > .git/info/exclude
 
-      - name: Pull GitLab repo
-        if: steps.config.outcome == 'success'
-        run: |
-          git remote add -f upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
-          git pull --allow-unrelated-histories --autostash upstream main && \
-          git push origin main
-           
+      # OLD: moved files to bitbucket
+      
+      #- name: Pull GitLab repo
+      #  if: steps.config.outcome == 'success'
+      #  run: |
+      #    git remote add -f upstream https://gitlab.com/silv3rr/io.glftpd.ga.git/ && \
+      #    git pull --allow-unrelated-histories --autostash upstream main && \
+      #    git push origin main           
       #- name: Fetch GitLab repo
       #  id: fetch
       #  if: steps.config.outcome == 'success'
