@@ -1,0 +1,12 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE SEARCH <string> [<string> ...]               |
+|                                                          |
+| <string> The string to search for.                       |
+|                                                          |
+| The SITE SEARCH command searches a database containing   |
+| the entire site contents for pathnames that contain the  |
+| specified string. The search is not case-sensitive.      |
+| If more than one search string is specified, logical AND |
+| is assumed between them. This might find old, non-       |
+| existent pathnames if the database is not maintained.    |
+ `--------------------------------------------------------'

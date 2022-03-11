@@ -1,0 +1,9 @@
+!D!5     ADDIP!B!5:!h!5 Add IP To a User                                             
+!D!5     DELIP!B!5:!h!5 Delete an IP From a User                                     
+!D!5   ADDUSER!B!5:!h!5 Add User                                                     
+!D!5   DELUSER!B!5:!h!5 Delete User                                                  
+!D!5     READD!B!5:!h!5 Readd Deleted User                                           
+!D!5    CHANGE!B!5:!h!5 Change Field For a User                                      
+!D!5  GADDUSER!B!5:!h!5 Add User and put him in a group                              
+!D!5   RENUSER!B!5:!h!5 Rename User                                                  
+!D!5    CHPASS!B!5:!h!5 Change Another User's Password                               

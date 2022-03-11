@@ -1,0 +1,7 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE KICK <username>                              |
+|                                                          |
+| <username> The username to kick.                         |
+|                                                          |
+| To list users online, use the SITE WHO command.          |
+ `--------------------------------------------------------'

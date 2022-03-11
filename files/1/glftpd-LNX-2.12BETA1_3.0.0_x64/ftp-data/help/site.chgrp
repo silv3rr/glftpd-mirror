@@ -1,0 +1,12 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE CHGRP <username> <group> [<group> ...]       |
+|                                                          |
+| <username> The username to edit.                         |
+| <group>    The group to toggle for this user.            |
+|                                                          |
+| NOTE: a user can only be a member in 10 groups and as    |
+| such max 20 groups can be toggled at once for a user     |
+| (10 removed from and 10 added to).                       |
+|                                                          |
+| SITE CHGRP <username> by itself to list a user's groups. |
+ `--------------------------------------------------------'

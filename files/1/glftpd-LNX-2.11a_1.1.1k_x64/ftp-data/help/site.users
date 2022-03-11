@@ -1,0 +1,21 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE USERS [<string>]                             |
+|                                                          |
+| <string> Optional param to get a list of users with a    |
+|          specific property, see below for options.       |
+|          Otherwise lists all users except those deleted. |
+|                                                          |
+| String can be any of these keywords:                     |
+|  siteop, gadmin, glock, exempt, deleted, useredit, kick, |
+|  kill, anonymous, nuke, unnuke, undupe, take, give,      |
+|  users, idler, leech                                     |
+|                                                          |
+| If string is one character, it is considered a flag and  |
+| only users with that flag will be listed.                |
+|                                                          |
+| If string starts with character '=', it is considered a  |
+| group and only users in that group will be listed.       |
+|                                                          |
+| If string ends in character '*', all usernames beginning |
+| with what precedes * will be listed.                     |
+ `--------------------------------------------------------'

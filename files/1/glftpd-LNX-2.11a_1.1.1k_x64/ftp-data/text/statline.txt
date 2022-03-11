@@ -1,0 +1,2 @@
+!e[!GUl: !g%[%.1f]IG%[%s]Y!e] [!GDl: !g%[%.1f]IJ%[%s]Y!e] [!GSpeed: !g%[%.2f]A%[%s]V!e] [!GFree: !g%[%.0f]FMB!e]!0
+!e [!GSection: !g%[%s]b!e] [!GCredits: !g%[%.1f]Ic%[%s]Y!e] [!GRatio: !g%[%s]Ir!e]!0

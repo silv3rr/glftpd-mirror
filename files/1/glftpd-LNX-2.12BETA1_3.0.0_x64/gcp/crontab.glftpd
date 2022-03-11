@@ -1,0 +1,8 @@
+# run reset at midnight
+0 0 * * *       /glftpd/bin/reset -r /etc/glftpd.conf >/glftpd/ftp-data/logs/reset.log 2>&1
+# run date.sh a minute later
+1 0 * * *	/glftpd/bin/date.sh >/glftpd/ftp-data/logs/date.log 2>&1
+# add directories that might have been uploaded/moved from outside of glftpd
+0 4 * * *	/glftpd/bin/update.sh >/glftpd/ftp-data/logs/update.log 2>&1
+# run dirlog cleaner/sorter at 4:30 am
+30 4 * * *	/glftpd/bin/olddirclean2 -P > /glftpd/ftp-data/logs/olddirclean.log 2>&1

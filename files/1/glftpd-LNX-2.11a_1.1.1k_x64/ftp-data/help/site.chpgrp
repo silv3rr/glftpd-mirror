@@ -1,0 +1,6 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE CHPGRP <username> <group>                    |
+|                                                          |
+| <username> The username to edit.                         |
+| <group>    The group to be primary for this user.        |
+ `--------------------------------------------------------'

@@ -1,0 +1,44 @@
+* What is this file?
+
+- This is a quick overview of how glftpd works, written by Usurper for people who aren't familiar with this software.  Probably every other piece of documentation provided with glftpd assumes that you know this.
+
+* What is glftpd?
+
+- Glftpd is an ftp server (or demon, but not daemon, it does not run continuously in background).  A new instance of glftpd is started by inetd (the inet daemon) each time a user connects.  Inetd listens on a certain port, and when it establishes a connection, it starts tcpd, which in turn passes the connection on to glftpd (assuming the incoming IP passes the rules in /etc/hosts.allow and /etc/hosts.deny).  You can take tcpd out and have inetd start glftpd directly, but you need to specify a dummy first parameter to glftpd in inetd.conf if you do that.
+
+* How does glftpd differ from wu-ftpd or pro-ftpd?
+
+- It differs A LOT.  One major difference is that glftpd wasn't designed as a replacement for one of the above.  Glftpd has its own passwd and group files in /glftpd/etc.  When a user connects, glftpd reads its configuration file (by default /etc/glftpd.conf), and then it CHROOTS (try man chroot) itself to whatever the rootpath is set to (by default /glftpd; if you set it to /, chroot will not take place), so that nothing outside of the rootpath will be accessible to the user.  In addition to that, each user is semi-chrooted to his/her home directory, so that he/she can't access anything outside.  Most people use the same home directory for every user, but you can give everyone his/her own.
+
+* Why is glftpd like that?
+
+- It was designed to be a separate server, sort of like war-ftpd or serv-u for windows (though of course comparing those to glftpd is like comparing bread crumbs to a bread loaf).  Glftpd has a complex ratio system, perfect for running a private software distribution server (we do not condone piracy. there are plenty of legal things you can distribute). Another good use is for web servers where users can ftp and upload their web pages.
+
+* Can glftpd be used to store users' web pages, or for anonymous users?
+
+- Yes.  Home directories can be changed for any user, there is a lot of support for anonymous accounts.
+
+* What are some advantages of glftpd?
+
+- For one, glftpd is HIGHLY configurable.  It also has a zillion different options, so almost everyone can get it to do what they want.
+
+* What are some disadvantages?
+
+- Glftpd can't be easily used as a replacement for the default ftpd, you'd have to create some mechanism to automatically add new shell users to glftpd.
+
+* Who created glftpd? Is it free?
+
+- Glftpd started as a wu-ftpd/bftpd clone.  Greyline did a lot of work on it, and then passed it on to Usurper, who in his turn passed it on to Bloody_A, who is currently enhancing/fixing it.  It is free, although the source code is not available to the general public yet.  It will be sometime in the future.
+
+* What does glftpd mean?
+
+- Grey Line's FTP Demon, probably.  Glftpd isn't quite a 'demon', since demon is defined as part of a larger program that lies dormant.  Glftpd lies dormant, but it is not part of another program, so in a sense it's a cross between a daemon and a demon.  I don't plan on changing the name to uftpd :}.
+
+* Who do I sue if glftpd breaks my system?
+
+- You can sue anybody you want except the authors, who take no responsibility for what this software does to your system (although most likely it won't do anything bad).  It's a good idea to sue Bill Gates if something does happen - he has enough money for everyone.
+
+* OK, BUT HOW DO I INSTALL THIS??
+
+- Read glftpd.docs.
+

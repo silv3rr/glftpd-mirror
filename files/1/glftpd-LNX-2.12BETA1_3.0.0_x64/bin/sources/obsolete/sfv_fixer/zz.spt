@@ -1,0 +1,33 @@
+#!/bin/sh
+# It copies system programs needed to run scripts in glftpd
+files="
+awk
+cat
+chmod
+cp
+cut
+date
+echo
+expr
+find
+grep
+head
+kill
+ln
+ls
+mkdir
+mv
+rm
+sed
+sh
+sort
+tail
+touch
+tr
+wc
+"
+
+GR=`grep ^rootpath /etc/glftpd.conf | awk '{print $2}'`
+for i in $files; do
+   /bin/cp -v `/usr/bin/which "$i"` $GR/bin
+done

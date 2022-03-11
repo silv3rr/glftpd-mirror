@@ -1,0 +1,9 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE UNDUPE <filemask>                            |
+|                                                          |
+| <filemask> Mask to match files to undupe from dupelog,   |
+|            can contain [] and * to match multiple files. |
+|                                                          |
+| EXAMPLE: SITE UNDUPE ind*.zip                            |
+|          This will undupe ind1.zip, indtbl2345.zip, etc. |
+ `--------------------------------------------------------'

@@ -1,0 +1,18 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE GIVE <username> <kbytes>[tTgGmM] [<message>] |
+|                                                          |
+| <username>     The username to give to.                  |
+| <kbytes>[gGmM] Amount of kibibytes to give, add m or M   |
+|                to specifiy it's mebibytes, g or G for    |
+|                gibibytes and t or T for tebibytes.       |
+| <message>      Optional message the user will receive.   |
+|                                                          |
+| NOTE: unless you are a siteop, the credits given will    |
+| be taken from your account. This might prove to be       |
+| difficult if you have leech.                             |
+|                                                          |
+| EXAMPLE: SITE GIVE user 1000 Here's some credits for ya! |
+|          This would give user 'user' 1000 kibibytes of   |
+|          your credits and send the user the message      |
+|          "Here's some credits for ya!".                  |
+ `--------------------------------------------------------'

@@ -1,0 +1,3 @@
+!D!5      NUKE!B!5:!h!5 Nuke Program (site nuke <dir> <rate> <reason>)               
+!D!5    UNNUKE!B!5:!h!5 UnNuke Program (site unnuke <dir> <Opt: reason>)             
+!D!5    UNDUPE!B!5:!h!5 Delete Dupe (site undupe <filename>)                         

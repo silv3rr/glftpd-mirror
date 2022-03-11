@@ -1,0 +1,27 @@
+FLAGS for user !C%[%s]Iu ...
+ 
+   [%[%.1s]f1]SITEOP    -1-
+   [%[%.1s]f2]GADMIN    -2-
+   [%[%.1s]f3]GLOCK     -3-
+   [%[%.1s]f4]EXEMPT    -4-
+   [%[%.1s]f5]COLOR     -5-
+   [%[%.1s]f6]DELETED   -6-
+   [%[%.1s]f7]USEREDIT  -7-
+   [%[%.1s]f8]ANONYMOUS -8-
+   [%[%.1s]fA]NUKE      -A-
+   [%[%.1s]fB]UNNUKE    -B-
+   [%[%.1s]fC]UNDUPE    -C-
+   [%[%.1s]fD]KICK      -D-
+   [%[%.1s]fE]KILL      -E-
+   [%[%.1s]fF]TAKE      -F-
+   [%[%.1s]fG]GIVE      -G-
+   [%[%.1s]fH]USERS     -H-
+   [%[%.1s]fI]IDLER     -I-
+   [%[%.1s]fJ]CUST1     -J-
+   [%[%.1s]fK]CUST2     -K-
+   [%[%.1s]fL]CUST3     -L-
+   [%[%.1s]fM]CUST4     -M-
+   [%[%.1s]fN]CUST5     -N-
+ 
+A '*' denotes an enabled flag.  Only sysop users may change flags.
+Use SITE CHANGE <USER> FLAGS +/-VALUE to change.

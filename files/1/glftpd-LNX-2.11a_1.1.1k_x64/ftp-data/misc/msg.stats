@@ -1,0 +1,27 @@
+!e.-!E=!e------------------------------ -- -(!h at %T !e)-   -!0
+!e| !fStats for user    !e: !D%U !0
+!e|!0
+!e| !fGENERAL STATS!0
+!e| Connected from    : !D%R !0
+!e| Times connected   : !D%Q !0
+!e| Access level      : !D%V !0
+!e| Simult. logins    : !D%s !0
+!e| Ratio             : !D%r !0
+!e| !fTIME RELATED!0
+!e| Last connected at : !D%l ago !0
+!e| Time online today : !D%I minutes !0
+!e| Time -"- this call: !D%O minutes !0
+!e| Avg. k/sec UL     : !D%4 !0
+!e| Avg. k/sec DL     : !D%5 !0
+!e| Avg. k/sec overall: !D%6 !0
+!e| !fBYTE/FILE RELATED (U/L) !0
+!e| Total Kbytes UL   : !D%b  ( Files: %u )!0
+!e| Kbytes UL this wk : !D%k  ( Files: %w )!0
+!e|  -"- UL this call : !D%X  ( Files: %C )!0
+!e| !fBYTE/FILE RELATED (D/L)!0
+!e| Total Kbytes DL   : !D%2  ( Files: %d )!0
+!e| Kbytes DL this wk : !D%3  ( Files: %k )!0
+!e|  -"- DL this call : !D%Y  ( Files: %K )!0
+!e| Credits left      : !D%c Kb!0
+!e`-!E=!e------------------------ ---- --  -- -   -!0
+

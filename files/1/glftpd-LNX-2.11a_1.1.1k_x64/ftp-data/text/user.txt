@@ -1,0 +1,19 @@
+!e+=======================================================================+!0
+!e| !gUsername!G: !C%[%-20s]Iu     !gCreated!G: !C%[%-20s]IC      !e|!0
+!e| !gAdded by!G: !C%[%-20s]I-     !gExpires!G: !C%[%-20s]I!      !e|!0
+!e| !gTime On Today!G: !C%[%-19s]Ie !gLast seen: %[%-24s]I+!e|!0
+!e| !gFlags!G: !C%[%-22s]IZ      !gIdle time!G: !C%[%-10s]I@              !e|!0
+!e| !gRatios!G: !C%[%-61s]I= !e|!0
+!e| !gCredits!G: !C%[%-60s]IX !e|!0
+!e| !gTotal Logins!G: !C%[%-9d]IL            !gCurrent Logins!G: !C%[%-9d]Im          !e|!0
+!e| !gMax Logins!G: !C%[%-9s]IM              !gFrom same IP!G: !C%[%-9s]I#            !e|!0
+!e| !gMax Sim Uploads!G: !C%[%-9s]I^         !gMax Sim Downloads!G: !C%[%-9s]I*       !e|!0
+!e| !gMax Upload Speed!G: !C%[%7.1f]I&%[%s]V     !gMax Download Speed!G: !C%[%7.1f]Iz%[%s]V   !e|!0
+!e| !gTimes Nuked!G: !C%[%-5d]IO                 !gBytes Nuked!G: !C%[%6.0f]Ix%[%s]Y             !e|!0
+!e| !gWeekly Allotment!G: !C%[%5.0f]IW%[%s]Y         !gMessages Waiting!G: !C%[%-10s]Id       !e|!0
+!e| !gTime Limit!G: !C%[%4d]Iw minutes.          (0 = Unlimited)                    !e|!0
+!e| !gTimeframe!G: !C%[%s]IE             (24 hour format)                   !e|!0
+!e| !gTagline!G: !C%[%-55s]It      !e|!0
+!e| !gGroups!G:!C%[%-62s]Iy !e|!0
+!e| !gPriv Groups!G:!C%[%-57s]IY !e|!0
+!e+-----------------------------------------------------------------------+!0

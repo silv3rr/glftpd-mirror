@@ -1,0 +1,10 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE READD <username>                             |
+|                                                          |
+| <username> The username to readd.                        |
+|                                                          |
+| NOTE: in order for a user to be readded, they must be    |
+| marked as deleted with userflag 6.                       |
+|                                                          |
+| The following users may be READDed:                      |
++----------------------------------------------------------+

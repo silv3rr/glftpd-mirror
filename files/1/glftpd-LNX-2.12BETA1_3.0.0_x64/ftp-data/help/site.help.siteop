@@ -1,0 +1,13 @@
+!D!5    GRPADD!B!5:!h!5 Add group                                                    
+!D!5    GRPDEL!B!5:!h!5 Delete group                                                 
+!D!5    GRPNFO!B!5:!h!5 Change Group nfo                                             
+!D!5    GRPREN!B!5:!h!5 Rename group                                                 
+!D!5       GRP!B!5:!h!5 Show extended group info                                     
+!D!5     CHGRP!B!5:!h!5 Change a user's group                                        
+!D!5    CHPGRP!B!5:!h!5 Change a user's primary group                                
+!D!5 GRPCHANGE!B!5:!h!5 Change group settings                                        
+!D!5  CHGADMIN!B!5:!h!5 Change the gadmin(s) for a group                             
+!D!5    LOGINS!B!5:!h!5 Login Log                                                    
+!D!5    SYSLOG!B!5:!h!5 Syslog Log of User Changes                                   
+!D!5    UPDATE!B!5:!h!5 Update DirLog Database                                       
+!D!5     PURGE!B!5:!h!5 Purge Deleted Users                                          

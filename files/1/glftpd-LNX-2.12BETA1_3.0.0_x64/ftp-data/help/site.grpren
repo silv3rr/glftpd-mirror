@@ -1,0 +1,6 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE GRPREN <oldgroup> <newgroup>                 |
+|                                                          |
+| <oldgroup> The old group name.                           |
+| <newgroup> The new group name.                           |
+ `--------------------------------------------------------'

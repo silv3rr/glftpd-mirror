@@ -1,0 +1,9 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE UNNUKE <directory> <message>                 |
+|                                                          |
+| <directory> The directory to unnuke.                     |
+| <message>   The reason for the unnuke, max 127 chars.    |
+|                                                          |
+| NOTE: You must enter the original directory name, not    |
+| the NUKED-directory. It IS case-sensitive.               |
+ `--------------------------------------------------------'

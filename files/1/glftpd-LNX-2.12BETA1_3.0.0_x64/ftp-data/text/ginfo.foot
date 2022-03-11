@@ -1,0 +1,7 @@
+|----------+------+--------+------+--------+-------+--------------------|
+|   * denotes a siteop (flag 1)     + denotes a group admin (flag 2)    |
+|----------+------+--------+------+--------+-------+--------------------|
+|   Tot %[%s]Y Up: %[%10.1f]gm   Tot Files Up: %[%6d]gx   Users in group: %[%-3d]gk |
+|   Tot %[%s]Y Dn: %[%10.1f]gn   Tot Files Dn: %[%6d]gy       With leech: %[%-3d]gl |
+|   Total Free Slots: %[%-9.9s]gh   Free Leech Slots: %[%-9.9s]gi           |
+`-----------------------------------------------------------------------'

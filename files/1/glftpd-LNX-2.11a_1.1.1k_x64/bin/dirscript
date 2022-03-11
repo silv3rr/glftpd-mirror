@@ -1,0 +1,25 @@
+#!/bin/sh
+# $1 = Name of directory.
+# $2 = Actual path the directory is stored in
+# $PWD = Current Path.
+
+# EXIT codes..
+# 0 - Good: 
+# 2 - Bad:
+
+# This is an examlple script that checks if the directory the user is trying
+# to make exists in yesterday's DATED directory. For example, if today is 0203
+# then this script will check whether ../0202/dirname exists, and deny if
+# it does.
+
+date1=`date --date '1 days ago' +%m%d`
+cd "$2"
+if test -d "../$date1/$1" ; then
+  echo -e "Directory already exists in yesterday's dated dir\r"
+  exit 2;
+else
+# If you want to use echo and then exit with 0, you have to put "#0"
+# at the beginning of the string.  Example:
+# echo -e "#0Trying to create $1.\r"
+  exit 0
+fi

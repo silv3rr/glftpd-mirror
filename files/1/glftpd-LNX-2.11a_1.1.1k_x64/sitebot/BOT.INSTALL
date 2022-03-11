@@ -1,0 +1,18 @@
+These scripts are supposed to "announce" new directories on IRC.
+
+The TIMER script uses timers to periodically check log files for new directories.
+
+If bot troubles persist, remove other bot loaded scripts as they may cause interference.
+
+There are other 3rd party scripts that you might find better.
+
+
+*Start of total newbie section*
+
+You need an EGGDROP bot to use these (or some other bot that processes TCL scripts).
+
+A bot is a "roBOTic" (runs by itself in the background) IRC client.
+
+IRC is Internet Relay Chat used on ther Internet.
+
+If you are still confused, try serv-u or something.

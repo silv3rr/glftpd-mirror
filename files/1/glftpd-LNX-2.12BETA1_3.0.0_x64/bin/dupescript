@@ -1,0 +1,38 @@
+#!/bin/sh
+# $1 = Name of file.
+# $2 = Actual path the file is stored in
+# $PWD = Current Path.
+
+# EXIT codes..
+# 0 - Good: 
+# 2 - Bad:
+exit 0
+#Remove ABOVE LINE to enable script.  Know WTF you're doing before doing so!
+#Be sure your /glftpd/dev/null is chmod 666.
+case "$1" in  
+    *.[rR][aA][rR]|*.[rRsS0123456789][0123456789][0123456789])
+# Be sure 'grep' is in /glftpd/bin !
+	if ls "$2" | grep -i sfv > /dev/null ; then
+	        exit 0
+	else
+		echo -e "You must upload .sfv first!\n"
+	        exit 2
+	fi
+	;;
+
+#Deny NFO's and .DIZ files so they can't be uploaded.
+#    *.[nN][fF][oO])
+#        exit 2;
+#        ;;
+
+#    *.[dD][iI][zZ])
+#        exit 2;
+#        ;;
+	
+    *)
+# If you want to use echo and then exit with 0, you have to put "#0"
+# at the beginning of the string.  Example:
+# echo -e "#0Filename passed dupescript, opening connection.\r"
+    	exit 0
+	;;
+esac

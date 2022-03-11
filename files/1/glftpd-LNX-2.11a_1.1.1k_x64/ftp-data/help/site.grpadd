@@ -1,0 +1,10 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE GRPADD <group> [<description>]               |
+|                                                          |
+| <group>       The group to add.                          |
+| <description> Optional description of the group.         |
+|                                                          |
+| EXAMPLE: SITE GRPADD STAFF WE ROCK!                      |
+|          This will add the group STAFF with the          |
+|          description "WE ROCK!".                         |
+ `--------------------------------------------------------'

@@ -1,0 +1,11 @@
+!E+!e-------------------------------!E[ !D%[%-7.7s]a!E ]!e-------------------------------!E+!0
+!e|               - FILES -            - BYTES -          - AVG RATE -      !e|!0
+!e| !gALLTIME UP   !C%[%10d]If    %[%15.0f]IG%[%s]Y   %[%15.0f]IU%[%s]V    !e|!0
+!e| !gALLTIME DOWN !C%[%10d]Ii    %[%15.0f]IJ%[%s]Y   %[%15.0f]ID%[%s]V    !e|!0
+!e| !gMONTH UP     !C%[%10d]Ia    %[%15.0f]Ib%[%s]Y   %[%15.0f]IQ%[%s]V    !e|!0
+!e| !gMONTH DOWN   !C%[%10d]In    %[%15.0f]Ip%[%s]Y   %[%15.0f]Iv%[%s]V    !e|!0
+!e| !gWEEK UP      !C%[%10d]Ig    %[%15.0f]Ih%[%s]Y   %[%15.0f]Iq%[%s]V    !e|!0
+!e| !gWEEK DOWN    !C%[%10d]II    %[%15.0f]Ik%[%s]Y   %[%15.0f]IV%[%s]V    !e|!0
+!e| !gDAY UP       !C%[%10d]IA    %[%15.0f]IB%[%s]Y   %[%15.0f]Is%[%s]V    !e|!0
+!e| !gDAY DOWN     !C%[%10d]IN    %[%15.0f]IP%[%s]Y   %[%15.0f]IS%[%s]V    !e|!0
+!E+!e-------------------------------------------------------------------------!E+!0

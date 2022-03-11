@@ -1,0 +1,272 @@
+# The name of your site
+set sitename "CHANGEME"
+
+# The channel names
+
+# INCLUDE the hash marks "#" for the channel names.
+set chan {
+	#My channel
+}
+
+# The name of the site for command purposes (all lowercase)
+set sitecmd "XX"
+
+# The location of the glftpd binaries
+set glftpdbin "/glftpd/bin"
+
+# This flag tells dirlog whether or not to cycle. Leave it at 1 if
+# you don't know what I mean.
+set dirlog_recycle 0
+
+# This is a variable that you shouldnt change.
+# (Internal variable.  Don't reset it if script is already loaded)
+
+if {![info exists curvol]} {
+  set curvol ""
+}
+
+# This is the interval in seconds for which dirchecking occurs
+set check_interval 0
+
+# If toolbox is not loaded for some reason, then we just load the utimerexists
+# proc from it.  utimerexists proc written by cmw, full credit to him.
+
+if {![info exists toolbox_loaded]} {
+     proc utimerexists {timer_proc} {
+        foreach j [utimers] {
+           if {[string compare [lindex $j 1] $timer_proc] == 0} {
+                return [lindex $j 2]
+           }
+        }
+     }
+}
+
+if {[utimerexists check_dirlog] == ""} {
+	utimer $check_interval "check_dirlog"
+}
+
+proc killalltimers {} { foreach ut [utimers] { killutimer [lindex $ut 2] } }
+
+proc check_dirlog {} {
+  global glftpdbin sitename chan channel 
+
+  	set fd [open "|$glftpdbin/dirlogscanner -l1"]
+	gets $fd line
+	set status [lindex $line 2]
+	close $fd
+  if {[string match $status "NEWDIR" ]} {
+  	set fd [open "|$glftpdbin/dirlogscanner -N1"]
+	gets $fd user_info
+	gets $fd directory
+	close $fd
+  	set uploader [lindex $user_info 0]
+	set group [lindex $user_info 1]
+	set tagline [string range $user_info 26 end]
+	set tagline [string trim $tagline]
+	set i [string length $directory]
+  	while {![string match "/" [string index $directory $i]]} {set i [expr $i - 1]}
+  	incr i
+  	set p [string range $directory $i end]
+  	set pathstr [string length $directory]
+  	set strlngth [string length $p]
+  	set ng [expr $pathstr - $strlngth]
+  	set ng [expr $ng - 2]
+  	set nq [string range $directory 0 $ng]
+  	set i [string length $nq]
+  	while {![string match "/" [string index $nq $i]]} {set i [expr $i - 1]}
+  	incr i
+  	set pathstr [string range $nq $i end]
+	foreach channel $chan { 
+		putserv "PRIVMSG $channel : \[\002$sitename\002\] -$pathstr- \002(\002$uploader\002/\002$group\002/\002$tagline\002)\002 $p"   
+	}
+   } elseif {[string match $status "NUKE" ]} {
+   	   set fd [open "|$glftpdbin/nukelogscanner -N"]
+	   gets $fd user_info
+	   gets $fd directory  
+	   set i [string length $directory]
+	   while {![string match "/" [string index $directory $i]]} {set i [expr $i - 1]} 
+	   incr i
+	   set directory [string range $directory $i end]	   	
+      	   set reason [string range $user_info 38 end] 
+	   set reason [string trim $reason]
+	   set nuker [lindex $user_info 0]
+	   set multiplier [lindex $user_info 2]
+	   set amount [lindex $user_info 3]
+	   set nukee [lindex $user_info 1]
+	   lappend nukee ($amount\M)
+	   set i 1
+	   while {$i < 10} {
+	   	 gets $fd user_info; gets $fd next_dir
+		 if {![string match $directory $next_dir]} {break}
+		 set next_nukee [lindex $user_info 1]
+		 set next_amnt [lindex $user_info 3]
+		 append nukee "\002,\002"
+		 lappend nukee $next_nukee ($next_amnt\M)
+  	         incr i
+	   }
+	   close $fd
+	   foreach channel $chan {
+	   	putserv "PRIVMSG $channel : \[\002$sitename\002\] \002-\002NUKE $multiplier\002-\002 $directory (Nuker: \002$nuker\002 Nukee(s): \002$nukee\002 Reason: \002$reason\002)"
+	   }
+   } elseif {[string match $status "UNNUKE" ]} {
+   	  set fd [open "|$glftpdbin/nukelogscanner -U"]
+	  gets $fd user_info
+	  gets $fd directory
+   	  set i [string length $directory]
+	  while {![string match "/" [string index $directory $i]]} {set i [expr $i -1]}
+	  incr i
+	  set directory [string range $directory $i end]
+          set reason [string range $user_info 34 end]
+	  set reason [string trim $reason]
+	  set unnuker [lindex $user_info 0]
+	  set nukee [lindex $user_info 1]
+	  set multiplier [lindex $user_info 2]
+	  set amount [lindex $user_info 3]
+	  lappend nukee ($amount\M)
+	  set i 1
+	  while {$i < 10} {
+	  	gets $fd user_info; gets $fd next_dir
+		if {![string match $directory $next_dir]} {break}
+		set next_nukee [lindex $user_info 1]
+		set next_amnt [lindex $user_info 3]  
+		append nukee "\002,\002"
+		lappend nukee $next_nukee ($next_amnt\M) 
+		incr i
+	  }
+	  close $fd
+	  foreach channel $chan {
+	  	putserv "PRIVMSG $channel : \[\002$sitename\002\] \002-\002UNNUKE $multiplier\002-\002 $directory (UnNuker: \002$unnuker\002 Nukee(s): \002$nukee\002 Comment: \002$reason\002)" 
+	  }
+   }
+}
+
+
+bind pub - ![set sitecmd]new pub_new
+proc pub_new { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set fd [open "|$glftpdbin/dirlogscanner -n"]
+	gets $fd line
+	set end [eof $fd]
+	while {$end != 1} {
+		putserv "PRIVMSG $nick : $line"
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+	 
+
+bind pub - ![set sitecmd]nukes pub_nukes
+proc pub_nukes { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set num [lindex $args 0]
+	set fd [open "|$glftpdbin/nukelogscanner -n$num"]
+	gets $fd line
+	set end [eof $fd]
+	putserv "PRIVMSG $nick : Nuker:    Nukee:     X  Size:   Age:     Reason:      Directory:"
+	putserv "PRIVMSG $nick : \002---------------------------------------------------------------------\002"
+	while { ($end != 1) } {
+		putserv "PRIVMSG $nick : $line"
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+
+bind pub - ![set sitecmd]who pub_who
+
+proc pub_who { nick uhost hand chan args } {
+       global sitename sitecmd glftpdbin
+       set fd [open "|$glftpdbin/ftpwho"]
+       gets $fd line
+       set end [eof $fd]
+       while { $end != 1 } {
+               putserv "NOTICE $nick : $line "
+               gets $fd line
+               set end [eof $fd]
+       }
+       close $fd
+}
+
+bind pub - ![set sitecmd]search pub_search
+
+proc pub_search { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set option [lindex $args 2]
+	set fd [open "|$glftpdbin/dirlogscanner -f$args"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "NOTICE $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+
+bind pub - ![set sitecmd]dupe pub_dupe
+proc pub_dupe { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set fd [open "|$glftpdbin/gldupe $args"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "NOTICE $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+
+bind pub - ![set sitecmd]weekup pub_weekup
+proc pub_weekup { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+ 	set fd [open "|$glftpdbin/stats -w -u"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "PRIVMSG $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+bind pub - ![set sitecmd]monthup pub_monthup
+proc pub_monthup { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set fd [open "|$glftpdbin/stats -m -u"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "PRIVMSG $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+bind pub - ![set sitecmd]allup pub_allup
+proc pub_allup { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set fd [open "|$glftpdbin/stats -a -u"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "PRIVMSG $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}
+bind pub - ![set sitecmd]dayup pub_dayup
+proc pub_dayup { nick uhost hand chan args } {
+	global sitename sitecmd glftpdbin
+	set fd [open "|$glftpdbin/stats -t -u"]
+	gets $fd line
+	set end [eof $fd]
+	while { $end != 1 } {
+		putserv "PRIVMSG $nick : $line "
+		gets $fd line
+		set end [eof $fd]
+	}
+	close $fd
+}

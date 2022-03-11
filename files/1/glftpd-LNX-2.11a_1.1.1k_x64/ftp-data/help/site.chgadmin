@@ -1,0 +1,9 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE CHGADMIN <username> <group>                  |
+|                                                          |
+| <username> The username to edit.                         |
+| <group>    The group to toggle for this user.            |
+|                                                          |
+| SITE CHGADMIN <username> by itself to list a user's      |
+| groups with a mark for gadmin groups.                    |
+ `--------------------------------------------------------'

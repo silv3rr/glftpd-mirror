@@ -1,0 +1,13 @@
+!G!5-----------------------------------------------------------
+!H!5   SITE GRPCHANGE !h!5<group> <field> <value>                  
+!H!5   SITE GRPCHANGE !h!5{ <group1> <group2> } <field> <value>    
+!H!5   SITE GRPCHANGE !h!5* <field> <value>                       
+!G!5-----------------------------------------------------------
+!E!5                                                           
+!h!5   Fields:!D!5  slots #                                        
+!D!5            leech_slots #                                  
+!D!5            allot_slots #                                  
+!D!5            max_allot_size #                               
+!D!5            max_logins #                                   
+!D!5            comment <comments>                             
+!G!5-----------------------------------------------------------

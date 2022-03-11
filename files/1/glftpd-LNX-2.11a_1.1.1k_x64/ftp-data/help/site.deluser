@@ -1,0 +1,8 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE DELUSER <username>                           |
+|                                                          |
+| <username> The username to remove.                       |
+|                                                          |
+| After you delete a user, you may later reinstate their   |
+| account by using "SITE READD".                           |
+ `--------------------------------------------------------'

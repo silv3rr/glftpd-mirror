@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /files/1/glftpd-LNX-2.11a_1.1.1k_x64/ftp-data/logs</title>
+ </head>
+ <body>
+<h1>Index of /files/1/glftpd-LNX-2.11a_1.1.1k_x64/ftp-data/logs</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=D">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/files/1/glftpd-LNX-2.11a_1.1.1k_x64/ftp-data/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dirlog">dirlog</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dupefile">dupefile</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dupelog">dupelog</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="error.log">error.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="laston.log">laston.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="nukelog">nukelog</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="oneliners.log">oneliners.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="request.log">request.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="transfer.log">transfer.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">  0 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="login.log">login.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right"> 85 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="glftpd.log">glftpd.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right"> 87 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="xferlog">xferlog</a></td><td align="right">2019-12-02 23:38  </td><td align="right"> 95 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sysop.log">sysop.log</a></td><td align="right">2019-12-02 23:38  </td><td align="right">144 </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+</body></html>

@@ -1,0 +1,14 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE TAKE <username> <kbytes>[tTgGmM] [<message>] |
+|                                                          |
+| <username>     The username to take from.                |
+| <kbytes>[gGmM] Amount of kibibytes to take, add m or M   |
+|                to specifiy it's mebibytes, g or G for    |
+|                gibibytes and t or T for tebibytes.       |
+| <message>      Optional message the user will receive.   |
+|                                                          |
+| NOTE: the taken credits are not added to your own.       |
+|                                                          |
+| EXAMPLE: SITE TAKE 1000 user                             |
+|          This would take 1OOO KiB of credits from user.  |
+ `--------------------------------------------------------'

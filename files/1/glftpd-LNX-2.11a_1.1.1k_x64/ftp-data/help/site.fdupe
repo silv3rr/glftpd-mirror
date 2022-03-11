@@ -1,0 +1,13 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE FDUPE [<max>] <searchstr>                    |
+|                                                          |
+| <max>       Optional: max matches to return, default 20. |
+| <searchstr> String to search for in filenames.           |
+|                                                          |
+| NOTE: a search can take a long time, it's recommended to |
+| not search for common words. If your searchstr is an     |
+| integer, you have to specify max as well. No * allowed.  |
+|                                                          |
+| EXAMPLE: To find 10 vivaldi songs:                       |
+|          SITE FDUPE 10 vivaldi                           |
+ `--------------------------------------------------------'

@@ -1,0 +1,14 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE NUKE <directory> <multiplier> <message>      |
+|                                                          |
+| <directory>  The directory to nuke.                      |
+| <multiplier> The value to multiply the offenders gained  |
+|              credits with, serving as punishment.        |
+|              The total amount subtracted is the ammount  |
+|              gained + this punishment.                   |
+| <message>   The reason for the nuke, max 127 chars.      |
+|                                                          |
+| NOTE: You must enter the ENTIRE directory name. It IS    |
+| case-sensitive. The nuke command is a privilege, please  |
+| use it with discretion.                                  |
+ `--------------------------------------------------------'

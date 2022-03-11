@@ -1,0 +1,12 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE DUPE [-max <num>] [-from <mmddyy>]           |
+|             [-to <mmddyy>] <searchstr> [<searchstr> ...] |
+|                                                          |
+| Please note that a search can take a long time. Do not   |
+| include wildcards, and it's not recommended to search    |
+| for common words.                                        |
+| If -max is not specified, the default is 20 matches.     |
+|                                                          |
+| EXAMPLE: To find duke nukem 3D in 1999:                  |
+|          SITE DUPE -from 010199 -to 010100 duke nukem 3D |
+ `--------------------------------------------------------'

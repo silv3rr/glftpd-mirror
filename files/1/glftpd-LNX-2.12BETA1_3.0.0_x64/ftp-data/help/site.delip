@@ -1,0 +1,13 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE DELIP <username> <ip#|ident@ip>              |
+|                                     [<ip#|ident@ip> ...] |
+|                                                          |
+| <username> The username to delete from.                  |
+| <ip#>      The number of an IP to delete.                |
+| <ident@ip> The exact ident@ip to delete.                 |
+|                                                          |
+| NOTE: you can only delete 10 IP's at a time.             |
+|                                                          |
+| You can get the list of IP's using the "site user        |
+| username" command. This only lists the first 10 IP's.    |
+ `--------------------------------------------------------'

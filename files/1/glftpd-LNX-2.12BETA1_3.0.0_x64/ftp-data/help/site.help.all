@@ -1,0 +1,44 @@
+!G!5--=--------------------- Available SITE commands ---------------------=--
+!D!5   TAGLINE!B!5:!h!5 Change Your Tagline                                          
+!D!5     DAYUP!B!5:!h!5 Show Today's Top Uploaders                                   
+!D!5     DAYDN!B!5:!h!5 Show Today's Top Downloaders                                 
+!D!5      WKUP!B!5:!h!5 Show This Week's Top Uploaders                               
+!D!5      WKDN!B!5:!h!5 Show This Week's Top Downloaders                             
+!D!5   MONTHUP!B!5:!h!5 Show This Month's Top Uploaders                              
+!D!5   MONTHDN!B!5:!h!5 Show This Month's Top Downloaders                            
+!D!5      ALUP!B!5:!h!5 Show Alltime Top Uploaders                                   
+!D!5      ALDN!B!5:!h!5 Show Alltime Top Downloaders                                 
+!D!5   GPDAYUP!B!5:!h!5 Show Today's Top Group Uploaders                        
+!D!5   GPDAYDN!B!5:!h!5 Show Today's Top Group Downloaders                      
+!D!5      GPWK!B!5:!h!5 Show This Week's Top Group Uploaders                         
+!D!5      GPWD!B!5:!h!5 Show This Week's Top Group Downloaders                       
+!D!5 GPMONTHUP!B!5:!h!5 Show This Month's Top Group Uploaders                        
+!D!5 GPMONTHDN!B!5:!h!5 Show This Month's Top Group Downloaders                      
+!D!5      GPAL!B!5:!h!5 Show Alltime Top Group Uploaders                             
+!D!5      GPAD!B!5:!h!5 Show Alltime Top Group Downloaders                           
+!D!5   TRAFFIC!B!5:!h!5 Show Site Traffic                                            
+!D!5   REQUEST!B!5:!h!5 Make a Request or List Requests                              
+!D!5 REQFILLED!B!5:!h!5 Mark a Request as Filled                                     
+!D!5   WELCOME!B!5:!h!5 Show Welcome Message                                         
+!D!5     RULES!B!5:!h!5 Show Site Rules                                              
+!D!5      USER!B!5:!h!5 Show Users On Site (Type username to see users stats)        
+!D!5     NUKES!B!5:!h!5 Show Nukes                                                   
+!D!5   UNNUKES!B!5:!h!5 Show UnNukes                                                 
+!D!5      DUPE!B!5:!h!5 Search Dupe Database                                         
+!D!5      TIME!B!5:!h!5 Show Local Time                                              
+!D!5       NEW!B!5:!h!5 Show Recent Dirs                                             
+!D!5     GROUP!B!5:!h!5 Join/Leave Groups                                            
+!D!5      ONEL!B!5:!h!5 Add/View Oneliners                                           
+!D!5       MSG!B!5:!h!5 Send a Message                                               
+!D!5       WHO!B!5:!h!5 See Who's Online                                             
+!D!5     COLOR!B!5:!h!5 Toggle Color                                                 
+!D!5      SEEN!B!5:!h!5 See when a user was last on                                  
+!D!5    LASTON!B!5:!h!5 Display stats of last users online                           
+!D!5    SEARCH!B!5:!h!5 Search a DIR on the site.                                    
+!D!5    PASSWD!B!5:!h!5 Change Password                                              
+!D!5      VERS!B!5:!h!5 Show Daemon Version                                          
+!D!5      STAT!B!5:!h!5 Show Statline                                                
+!D!5      IDLE!B!5:!h!5 Show Minimum and Maximum Idle Timeout                        
+!D!5     GINFO!B!5:!h!5 Detailed nfo of Groups                                       
+!D!5     USERS!B!5:!h!5 List Users on Site                                           
+!D!5     DELIP!B!5:!h!5 Delete an IP from your own user                               

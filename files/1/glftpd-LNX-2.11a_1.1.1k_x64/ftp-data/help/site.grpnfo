@@ -1,0 +1,6 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE GRPNFO <group> <description>                 |
+|                                                          |
+| <group>       The group to edit.                         |
+| <description> The description of the group.              |
+ `--------------------------------------------------------'

@@ -1,0 +1,20 @@
+Glftpd Crontab Pack (gcp) version 1.3
+
+This is a package containing what I consider necessary crontab entries for any glftpd site.
+These are in the "crontab.glftpd" file, which contains the following:
+
+1. An entry for reset to run at midnight. Most people already have done this during installation of glftpd.
+
+2. An entry for glupdate (called by update.sh). Glupdate is a program that updates directories found on disk into the dirlog, which is used for things like "site new" or "site search". Glupdate should always be run after you move directories to a different location.
+
+3. An entry for olddirclean2, a program that works sort of opposite of glupdate - it goes through the dirlog and removes directories that aren't present on disk. This prevents dirlog from growing forever, and it allows users to get accurate results when doing "site search", since directories that have been deleted/moved won't show up. This util also sorts the dirlog, so newest directories will always show on top.
+
+4. An optional entry for date.sh, which creates a new dated directory at midnight, and makes a link called "today" in /glftpd/site that points to that dated directory.
+
+
+The source code for glupdate and olddirclean2 are included, and you can always find the newest versions in the newest glftpd tarball (/glftpd/bin/sources).
+
+Before using update.sh, make sure you edit it and change the paths to whatever is appropriate on your system. You can also disable some directories or add more if you need to.
+
+Send bug reports to usurper@comcast.net
+

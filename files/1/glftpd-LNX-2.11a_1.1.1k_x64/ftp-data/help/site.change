@@ -1,0 +1,26 @@
+!G!5-----------------------------------------------------------
+!H!5   SITE CHANGE !h!5<username> <field> <value>                  
+!H!5   SITE CHANGE !h!5{ <user1> <user2> } <field> <value>         
+!H!5   SITE CHANGE !h!5=<group> <field> <value>                    
+!H!5   SITE CHANGE !h!5* <field> <value>                           
+!G!5-----------------------------------------------------------
+!E!5                                                           
+!h!5   Fields:!D!5  ratio                                          
+!D!5            sratio                                         
+!D!5            wkly_allotment [#,]#                           
+!D!5            max_dlspeed                                    
+!D!5            max_ulspeed                                    
+!D!5            max_sim_down                                   
+!D!5            max_sim_up                                     
+!D!5            timeframe # #                                  
+!D!5            credits                                        
+!D!5            flags                                          
+!D!5            homedir                                        
+!D!5            idle_time                                      
+!D!5            startup_dir                                    
+!D!5            num_logins # [#]                               
+!D!5            time_limit                                     
+!D!5            tagline                                        
+!D!5            comment                                        
+!D!5            expires [yyyy-mm-dd]
+!G!5-----------------------------------------------------------

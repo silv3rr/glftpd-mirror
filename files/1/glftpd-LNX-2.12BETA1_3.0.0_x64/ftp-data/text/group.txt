@@ -1,0 +1,9 @@
+!e+=======================================================================+!0
+!e| !gGroupname!G: !C%[%-20s]Cg                                       !e|!0
+!e| !gGroupcomment!G: !C%[%-50s]Cc      !e|!0
+!e| !gNumber of slots left!G: !C%[%-10s]CS           (-1 = Unlimited)           !e|!0
+!e| !gNumber of leech slots left!G: !C%[%-10s]Cl     (-1 = Disabled)            !e|!0
+!e| !gNumber of allotment slots left!G: !C%[%-10s]Ca (-2 = Disabled, -1 = Unlim)!e|!0
+!e| !gMax. allotment size!G: !C%[%-10s]Cw            (0 = Unlimited)            !e|!0
+!e| !gMax simultaneous logins!G: !C%[%-10s]Cs        (0 = Unlimited)            !e|!0
+!e+-----------------------------------------------------------------------+!0

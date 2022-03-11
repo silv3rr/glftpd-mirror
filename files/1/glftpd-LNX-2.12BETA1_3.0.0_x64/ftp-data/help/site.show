@@ -1,0 +1,8 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE SHOW <username>                              |
+|                                                          |
+| <username> The username to show the userfile of.         |
+|                                                          |
+| Displays the userfile as it appears on the filesystem,   |
+| without parsing it like for "site user".                 |
+ `--------------------------------------------------------'

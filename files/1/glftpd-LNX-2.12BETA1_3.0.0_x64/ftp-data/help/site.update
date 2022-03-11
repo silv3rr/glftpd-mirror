@@ -1,0 +1,19 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE UPDATE ["-v"] <dirmask>                      |
+|                                                          |
+| <dirmask> Mask to match directories in the current       |
+|           working directory with to add to the database  |
+|           used for search directories. Can contain *, ?  |
+|           and [] to match multiple directories.          |
+|                                                          |
+| "-v"      "verbose" flag; files and other directories    |
+|           not matching the dirmask are ouput on a        |
+|           "Skipping" prefixed line.                      |
+|                                                          |
+| NOTE: this does not work recursively and skips dirs      |
+| which don't have perms higher than 0700.                 |
+|                                                          |
+| EXAMPLE: SITE UPDATE A*                                  |
+|          Adds all dirs begining with 'A' in the current  |
+|          working directory to the dirlog database.       |
+ `--------------------------------------------------------'

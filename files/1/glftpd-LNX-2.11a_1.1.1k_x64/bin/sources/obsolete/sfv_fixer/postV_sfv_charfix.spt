@@ -1,0 +1,68 @@
+#!/bin/sh
+# postV_sfv_charfix.spt for glftpd1.21+ by ju7
+# $1 = Name of sfvfile (i.e. file.sfv).
+# $2 = Actual path to file (i.e. /site/incoming)
+
+# EXIT codes..
+# 0 - file is always good script rewrites every sfvfile doing chars conversion if any
+
+### BEGIN EDIT ###
+# glftpd configuration file
+GC="/etc/glftpd.conf"
+# this is temp dir, you need to create one in glftpd (i.e. /glftpd/tmp)
+# mkdir  /glftpd/tmp
+# chmod 777 /glftpd/tmp
+tmp="/tmp"
+# delete character symbol read from glftpd.conf
+DC="NULL"
+### END EDIT ###
+
+function FIXSFV() {
+   T=$tmp"/_tmpfix"`date +%m%d%k%M%S`; T=`echo $T | sed "s/ //g"`
+   if [ "`echo $3 | grep $DC`" = "" ]; then 
+      f=`echo $3 | sed "s/\[:space:\]/ /" | cut -c1`
+      t=`echo $3 | sed "s/\[:space:\]/ /" | cut -c2`
+#echo -e "$f< $t< hey"
+
+      [ "$f" != " " ] && {
+         rm -f "$T"; touch "$T"
+         grep ^";" "$2/$1" >>"$T"
+         grep -v ^";" "$2/$1" | tr "$f" "$t" >>"$T"
+         mv -f "$T" "$2/$1"
+      }
+#echo "jj==$f dd==$t"
+      [ "$f" = " " ] && {
+         grep ^";" "$2/$1" >>"$T"
+         del=":"
+         RF=`grep -v ^";" "$2/$1" | tr "$f" "$del"`
+         for i in $RF; do
+            crc=`echo $i | tr "$del" "\n" | tail -1`
+            nf=`echo $i | sed "s/$del$crc$//" | tr "$del" "$t"`
+            echo "$nf $crc" >>"$T"
+         done
+         mv -f "$T" "$2/$1"
+      }
+   else 
+      t=`echo $3 | tr -d "$DC" | cut -c1`
+      rm -f "$T"; touch "$T"
+      grep ^";" "$2/$1" >>"$T"
+      grep -v ^";" "$2/$1" | tr -d "$t" >>"$T"
+      mv -f "$T" "$2/$1"
+   fi
+   rm -f "$T"
+}
+
+
+WL=`grep ^"file_names " $GC | head -1` 
+[ "$WL" != "" ] && {
+   WLc=`echo "$WL" | wc -w`; WLc=`expr $WLc`
+   [ $WLc -gt 3 ] && {
+      P=`echo $WL | awk -v NUM=$WLc '{ for (i=4;i<=NUM;++i) print $i; }'`
+#      echo $P
+      for p in $P; do
+         FIXSFV $1 $2 $p
+      done
+   }
+}
+
+exit 0

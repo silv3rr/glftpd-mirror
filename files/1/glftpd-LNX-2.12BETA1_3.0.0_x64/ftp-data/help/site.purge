@@ -1,0 +1,10 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE PURGE <username>                             |
+|                                                          |
+| <username> The username to purge. If this equals *, all  |
+|            deleted users will be purged.                 |
+|                                                          |
+| NOTE: A username can only be purged if it is deleted.    |
+| Once you purge a username, it is permanently removed.    |
+| This means there is no way to readd it at a later time.  |
+ `--------------------------------------------------------'

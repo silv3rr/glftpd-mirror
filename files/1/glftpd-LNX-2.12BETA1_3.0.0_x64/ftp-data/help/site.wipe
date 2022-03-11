@@ -1,0 +1,10 @@
+ ,--------------------------------------------------------.
+| USAGE: SITE WIPE [-r] <string>                           |
+|                                                          |
+| <string> This is either a filename or a directory.       |
+|          If a directory is not empty, -r should be used. |
+|                                                          |
+| NOTE: wipe uses the same permissions as delete.          |
+| The difference is that no stats or credits are affected  |
+| and no dirlog and dupefile databases are updated.        |
+ `--------------------------------------------------------'

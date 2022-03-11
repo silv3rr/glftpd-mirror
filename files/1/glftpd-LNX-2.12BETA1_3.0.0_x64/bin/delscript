@@ -1,0 +1,24 @@
+#!/bin/bash
+# script which backups any file to be deleted
+# $1 = file or dir to be deleted
+# $2 = dir containing the file or dir
+backuppath="/ftp-data/site-backup"
+
+dest="$backuppath/$2"
+if [[ -f "$2/$1" ]]; then
+	if [[ ! -d "$dest" ]]; then
+		mkdir -p "$dest" >/dev/null 2>&1
+		if [[ $? -gt 0 ]]; then
+			echo "Could not make $dest backupdir."
+			exit 2
+		fi
+	fi
+	if [[ ! -f "$dest/$1" ]]; then
+		cp -p "$2/$1" "$dest/" >/dev/null 2>&1
+		if [[ $? -gt 0 ]]; then
+			echo "Could not copy file $1 to $dest."
+			exit 2
+		fi
+	fi
+fi
+exit 0

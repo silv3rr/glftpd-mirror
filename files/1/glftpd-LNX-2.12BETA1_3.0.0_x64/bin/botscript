@@ -1,0 +1,10 @@
+#!/bin/sh
+#make sure 'sh', 'kill', and this file are all executable and in your
+# /glftpd/bin  directory.
+
+#This script is ran once for ever new dir created on the site including
+#nuked dirs.   See glftpd.tcl!
+# $1 = NEWDIR, or NUKE, or UNNUKE
+# $2 = Affected directory name.
+#path is relative to 'rootpath'
+#kill -HUP `cat /sitebot/pid.*`

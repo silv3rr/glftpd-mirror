@@ -1,0 +1,108 @@
+#!/bin/sh 
+# $1 = Name of zipfile (i.e. file.zip).
+# $2 = Actual path to file (i.e. /glftpd/site/incoming)
+# $3 = CRC code of the file (you need calc_crc enabled in config file)
+# $PWD = Current Path.
+
+# EXIT codes..
+# 0 - Good: Give credit and add to user stats.
+# 2 - Bad:  No credit / No stats & file is removed.
+# 10-1010 - Same as 2, but glftpd will sleep for exitcode-10 seconds
+# note: 127 is reserved, so don't use that. 127 is treated like 1,
+# causing glftpd to spit out "script could not be executed".
+if [ ! -s "$2/$1" ]; then
+  echo -e "File is 0 bytes, deleting...\r"
+  exit 2;
+fi
+case "$1" in  
+   *.gz|*.tgz)
+        echo "Checking file integrity..."
+	if /bin/gunzip -tq "$2/$1" 2>/dev/null ; then
+	  echo "gzip archive passed."
+	  exit 0
+	fi
+	echo "gzip archive failed... deleting"
+	exit 2
+	;;
+
+   *.zip|*.ZIP)
+        echo -e "Checking file integrity...\r"
+        if /bin/unzip -tqq "$2/$1" ; then
+	  echo -e "PASSED.  Extracting FILE_ID.DIZ...  \r"
+          # if the .message file has 0 bytes (or does not exist) extract it
+          if test ! -s "$2/.message"; then
+          /bin/unzip -Cpoqq "$2/$1" file_id.diz > "$2/.message"
+          fi
+	  # Add zip comment here
+          # /bin/zip -z -q "$2/$1" < /bin/comment.nfo
+
+          # Add site nfo here
+          #/bin/zip -j -q "$2/$1" /bin/blah.nfo
+	  # Tell glftpd file is good.
+      	  exit 0
+
+        else
+          # /bin/mv "$2/$1" "$2/$1.bad"
+	  # Tell glftpd file is bad.
+          echo -e "File is BAD. Deleting...\r"
+          exit 2
+        fi
+    	;;
+
+    *.[rR][aA][rR])
+        cd "$2"
+	echo -e "Testing file $1\r"
+	/bin/unrar t -inul "$1"
+	res=$?
+	if [ $res = 0 ]; then
+	  echo -e "File is good!\r"
+	  exit 0
+	else
+	  if [ $res = 127 ]; then
+            echo -e "/bin/unrar failed!\r"
+	    exit 1
+	  fi
+	  echo -e "File is bad, deleting...\r"
+	  exit 2
+	fi
+	;;
+
+# uncomment the following section if you're using multi-disk rars,
+# which require a .sfv file (containing crc32 checksums for each file)
+#    *.[rR][aA][rR]|*.[rR0123456789][0123456789][0123456789])
+    	#CRC32 relies upon the *.sfv file to be uploaded first!
+#        cd "$2"
+#          if test "$3" = "00000000"; then
+#            BIN="sfv_check"
+#          else
+#            BIN="flysfv"
+#          fi
+#         if /bin/$BIN "$1" $3 *.sfv; then
+#	  echo -e "File is good!\r"
+#          if ls | grep -i sfv > /dev/null; then
+#            if test ! -s .message; then
+#              echo "Files in this release: " `cat *.sfv | grep -v ";" | wc -l` > .message
+#            fi
+#	  fi
+#	  exit 0
+#	 else
+#          echo -e "File is BAD. Deleting...\r"
+#	  exit 2
+#	fi
+#	;;
+	
+#    *.[nN][fF][oO])
+#        #Tell glftpd to go ahead and delete all *.nfo files.
+#	exit 2;
+#	;;
+#    
+#    *.[dD][iI][zZ])
+#        #Tell glftpd to delete all *.diz files.
+#	exit 2;
+#	;;
+
+    *)
+	echo -e "Unknown file format.. accepting by default.\r"
+    	exit 0
+	;;
+esac
