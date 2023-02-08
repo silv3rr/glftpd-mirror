@@ -1,6 +1,9 @@
 # Mirror of https://glftpd.io
 
-Goto https://io.glftpd.ga
+For the Main page goto:
+
+- https://io.glftpd.ga
+- https://silv3rr.github.io/io.glftpd.ga/
 
 Files: 
 
