@@ -3,8 +3,7 @@
 For the Main page goto:
 
 - https://mirror.glftpd.nl.eu.org
-- https://silv3rr.github.io/io.glftpd.ga/
-- https://io.glftpd.ga
+- https://silv3rr.github.io/glftpd-mirror
 
 Files: 
 
