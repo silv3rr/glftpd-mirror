@@ -1,3 +1,5 @@
+_scripts/
 **/files/*.tgz
 **/files/*.gz
 /index.html
+mirror-glftpd_io.sh
