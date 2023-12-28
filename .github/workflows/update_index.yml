@@ -21,7 +21,7 @@ jobs:
           mv -v index.html _includes/
       - name: Push
         run: |
-          if git diff --name-only _include/index.html | grep -Eq "^_include/index.html$"; then
+          if git diff --name-only -- _include/index.html | grep -Eq "^_include/index.html$"; then
             git config --global user.name "${{ env.GIT_USER_NAME }}"
             git config --global user.email "${{ env.GIT_USER_EMAIL }}"
             git add _includes/index.html
