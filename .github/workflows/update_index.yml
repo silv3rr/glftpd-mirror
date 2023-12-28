@@ -22,7 +22,12 @@ jobs:
       - name: Push
         run: |
           #if git diff --name-only --diff-filter=ACMRT | grep -Eq "^_include/index.html$"; then
-            git add _includes/index.html
-            git commit -m  "update index"
-            git push origin main
+          #  git add _includes/index.html
+          #  git commit -m  "update index"
+          #  git push origin main
           #fi
+          git config --global user.name "${{ env.GIT_USER_NAME }}"
+          git config --global user.email "${{ env.GIT_USER_EMAIL }}"
+          git add _includes/index.html
+          git commit -m  "update index"
+          git push origin main
