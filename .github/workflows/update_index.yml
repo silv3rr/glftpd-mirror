@@ -15,8 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get index.html
-        id: update_index
-        run: |
+        run: |  
           printf "index.html\n**/files/*\n" > .git/info/exclude
           wget -v -4 -K -l 1 -np -r "https://glftpd.io/" -nH -D glftpd.io -p -N -o /tmp/mirror-glftpd_io.log --rejected-log=/tmp/mirror-glftpd_io_rej.log && \
           mv -v index.html _includes/
