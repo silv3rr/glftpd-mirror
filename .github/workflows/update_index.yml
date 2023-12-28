@@ -21,7 +21,6 @@ jobs:
           wget -v -4 -K -l 1 -np -r "https://glftpd.io/" -nH -D glftpd.io -p -N -o /tmp/mirror-glftpd_io.log --rejected-log=/tmp/mirror-glftpd_io_rej.log && \
           mv -v index.html _includes/
       - name: Push
-        if: steps.checkout.outcome == 'success'
         run: |
           git add _includes/index.html
           git commit -m  "update index"
