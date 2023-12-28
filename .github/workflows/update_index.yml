@@ -5,22 +5,24 @@ on:
   #    - main
   workflow_dispatch:
 
-#env:
-#  GIT_USER_NAME: github-actions[bot]
-#  GIT_USER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+env:
+  GIT_USER_NAME: github-actions[bot]
+  GIT_USER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
 
 jobs:
   get_repo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Get index.html
+      - name: Wget index.html
         run: |  
           printf "index.html\n**/files/*\n" > .git/info/exclude
           wget -v -4 -K -l 1 -np -r "https://glftpd.io/" -nH -D glftpd.io -p -N -o /tmp/mirror-glftpd_io.log --rejected-log=/tmp/mirror-glftpd_io_rej.log && \
           mv -v index.html _includes/
       - name: Push
         run: |
-          git add _includes/index.html
-          git commit -m  "update index"
-          git push origin main
+          if git diff --name-only --diff-filter=ACMRT HEAD^ | grep -Eq "^_include/index.html$"; then
+            git add _includes/index.html
+            git commit -m  "update index"
+            git push origin main
+          fi
