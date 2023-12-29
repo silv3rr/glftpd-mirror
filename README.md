@@ -1,8 +1,9 @@
 # Mirror of https://glftpd.io
 
-For the Main page goto:
+For the Main page, goto:
 
 - https://mirror.glftpd.nl.eu.org
+- https://glftpd.0008086.xyz
 - https://silv3rr.github.io/glftpd-mirror
 
 Files: 
