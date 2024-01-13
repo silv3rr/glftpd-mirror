@@ -5,7 +5,6 @@ MOVED TO [silv3rr.codeberg.page](https://silv3rr.codeberg.page)
 For the Main page, goto:
 
 - https://mirror.glftpd.nl.eu.org
-- https://silv3rr.codeberg.page
 
 Cache:
 
